@@ -4,14 +4,23 @@ var drawChart=function(colordata)
 {
   var width=400;
   var height=200;
-  var svg=d3.select("svg")
+  var barWidth=width/colordata.length;
+  var svg=d3.select("body")
+            .append("svg")
             .attr("width",width)
             .attr("height",height);
 
   svg.selectAll("rect")
      .data(colordata)
      .enter()
-     .append("rect");
+     .append("rect")
+     .attr("x",function(d,i){
+       return i*barwidth;
+     })
+     .attr("y",function(d,i){
+       //return height-d.num;
+       return d.num*10;
+     })
 
 }
 dataP.then(function(data)
