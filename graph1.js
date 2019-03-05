@@ -20,7 +20,7 @@ var drawChart=function(colordata)
      .attr("y",function(d,i){
        //return height-d.num;
        return height-d.num*10;
-     })
+     });
 
 }
 dataP.then(function(data)
