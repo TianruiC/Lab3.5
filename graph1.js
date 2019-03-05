@@ -25,7 +25,7 @@ var drawChart=function(colordata)
        return d.num*10;
      })
      .attr("fill",function(d){
-       reuturn d.color;
+       return d.color;
      })
 }
 dataP.then(function(data)
