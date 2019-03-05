@@ -20,7 +20,11 @@ var drawChart=function(colordata)
      .attr("y",function(d,i){
        //return height-d.num;
        return height-d.num*10;
-     });
+     })
+     .attr("width",barWidth)
+     .attr("height",function(d){
+       return d.num;
+     })
 
 }
 dataP.then(function(data)
