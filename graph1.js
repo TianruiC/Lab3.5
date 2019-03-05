@@ -5,8 +5,7 @@ var drawChart=function(colordata)
   var width=400;
   var height=200;
   var barWidth=width/colordata.length;
-  var svg=d3.select("body")
-            .append("svg")
+  var svg=d3.select("svg")
             .attr("width",width)
             .attr("height",height);
 
@@ -23,7 +22,7 @@ var drawChart=function(colordata)
      })
      .attr("width",barWidth)
      .attr("height",function(d){
-       return d.num;
+       return d.num*10;
      })
 
 }
