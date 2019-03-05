@@ -27,12 +27,11 @@ var drawChart=function(colordata)
      .attr("fill",function(d){
        reuturn d.color;
      })
-
 }
 dataP.then(function(data)
 {
   console.log("data",data);
-  drawChart(data)
+  drawChart(data);
 },
 function(err)
 {
