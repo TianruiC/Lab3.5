@@ -19,7 +19,7 @@ var drawChart=function(colordata)
      })
      .attr("y",function(d,i){
        //return height-d.num;
-       return d.num*10;
+       return height-d.num*10;
      })
 
 }
