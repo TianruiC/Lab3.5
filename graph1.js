@@ -25,7 +25,8 @@ var drawChart=function(colordata)
 }
 dataP.then(function(data)
 {
-console.log("data",data);
+  console.log("data",data);
+  drawChart(data)
 },
 function(err)
 {
