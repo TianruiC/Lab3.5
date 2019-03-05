@@ -24,6 +24,9 @@ var drawChart=function(colordata)
      .attr("height",function(d){
        return d.num*10;
      })
+     .attr("fill",function(d){
+       reuturn d.color;
+     })
 
 }
 dataP.then(function(data)
