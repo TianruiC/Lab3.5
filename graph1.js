@@ -1,4 +1,5 @@
 var dataP=d3.json("colordata.json");
+var datacsv=d3.csv("colordata.csv");
 
 var drawChart=function(colordata)
 {
@@ -14,7 +15,7 @@ var drawChart=function(colordata)
      .enter()
      .append("rect")
      .attr("x",function(d,i){
-       return i*barwidth;
+       return i*barWidth;
      })
      .attr("y",function(d,i){
        //return height-d.num;
