@@ -28,6 +28,19 @@ var drawChart=function(colordata)
      .attr("fill",function(d){
        return d.color;
      })
+  svg.selectAll("text")
+     .data(colordata)
+     .enter()
+     .append("text")
+     .text(function(d){
+       return d.num;
+     }
+     .attr("x",function(d,i){
+       return i*barWidth+5;
+     })
+     .attr("y",function(d,i){
+       return d.num*10+15;
+     });
 }
 dataP.then(function(data)
 {
