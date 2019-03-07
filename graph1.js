@@ -1,6 +1,34 @@
-var dataP=d3.json("colordata.json");
-var datacsv=d3.csv("colordata.csv");
 
+var json=function()
+{
+  var dataP=d3.json("colordata.json");
+  dataP.then(function(data)
+  {
+    console.log("data",data)
+    drawChart(data);
+  },
+  function(err)
+  {
+    console.log(err);
+  }
+  )
+  document.getElementById("button1").disabled = true;
+};
+
+var csv=function()
+{
+var datacsv=d3.csv("colordata.csv")
+datacsv.then(function(data)
+{
+  console.log("data",data);
+  drawChart(data);
+},
+function(err)
+{
+  console.log(err);
+})
+document.getElementById("button2").disabled = true;
+};
 var drawChart=function(colordata)
 {
   var width=400;
@@ -10,7 +38,7 @@ var drawChart=function(colordata)
             .attr("width",width)
             .attr("height",height)
             .style("margin-right",40)
-            .style("background-color","white");
+            .style("background-color","#F7F7F6");
             //.attr("x",100)
             //.attr("y",500);
 
@@ -19,13 +47,13 @@ var drawChart=function(colordata)
      .enter()
      .append("rect")
      .attr("x",function(d,i){
-       return i*barWidth;
+       return i*barWidth+2;
      })
      .attr("y",function(d,i){
        //return height-d.num;
        return height-d.num*20;
      })
-     .attr("width",barWidth)
+     .attr("width",barWidth-4)
      .attr("height",function(d){
        return d.num*20;
      })
@@ -86,23 +114,3 @@ var drawChart=function(colordata)
         .attr("font-size", 14)
         .attr("font-family", "sans-serif");
 }
-dataP.then(function(data)
-{
-  console.log("data",data);
-  drawChart(data);
-},
-function(err)
-{
-  console.log(err);
-}
-)
-datacsv.then(function(data)
-{
-  console.log("data",data);
-  drawChart(data);
-},
-function(err)
-{
-  console.log(err);
-}
-)
