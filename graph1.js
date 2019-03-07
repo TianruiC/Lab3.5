@@ -29,6 +29,7 @@ function(err)
 })
 document.getElementById("button2").disabled = true;
 };
+
 var drawChart=function(colordata)
 {
   var width=400;
