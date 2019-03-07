@@ -39,8 +39,6 @@ var drawChart=function(colordata)
             .attr("height",height)
             .style("margin-right",40)
             .style("background-color","#F7F7F6");
-            //.attr("x",100)
-            //.attr("y",500);
 
   svg.selectAll("rect")
      .data(colordata)
